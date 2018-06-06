@@ -1,0 +1,28 @@
+<div class="container">
+ <div class="header">
+		<header>
+			<div class ="tab_area clearfix">
+				<ul class="tab clearfix" >
+					<li>
+        <%= link_to root_path do %> Home
+        <% end %>
+         </li>
+			    <li><%= link_to new_letter_path do %>Letter
+			     <% end %></li>
+			    <li><%= link_to letters_path do %>List
+			    <% end %></li>
+			     
+				</ul>
+			</div>
+	</header>
+</div>
+　
+
+	    
+	    
+	 <div class="letter_content">
+	    <h2>手紙を書く</h2>
+　</div>
+
+　<%= render 'form' %>
+

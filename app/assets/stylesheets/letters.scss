@@ -1,0 +1,257 @@
+* {
+	margin:0;
+	padding:0;	
+	text-align:center;
+
+}
+body {
+	background: image-url('bg_contents.png')repeat-x fixed;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size:14px;
+	/*font色*/
+	color:#52483B;
+	/*文字間隔*/
+	letter-spacing:0.1em;
+	position:relative;
+}
+
+.container {
+	position:relative;
+	top:-30px;left:80px;
+	width:800;
+	min-height: 100%;
+	margin:10px auto 30px auto;
+	
+	
+}
+.contents {
+ 	position:absolute;
+	top:150px; left:50px;
+	width: 930px;
+	height: 750px;
+	padding-bottom: 100px;
+	background-color: white;
+	margin:10px auto 30px auto;
+
+}
+
+
+a:link,
+a:visited {
+	color:#57808A;
+	text-decoration:underline;
+}
+a:hover,
+a:active {
+	text-decoration:none;
+}
+
+
+a img {
+	border:none;
+}
+.header h1 {
+	padding-left:35px;
+    position:absolute;
+	top:-15px; left:5px;
+	width:370px;
+	float:left;
+	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+
+.header {
+    position:relative;
+    top:5px;
+    right:10px;
+	width:990px;
+	height:100px;
+}
+
+.header p {
+	padding-top:10px ;
+	margin: 10px;
+    width: 990px;
+	font-size:14px;
+	font-style:normal;
+	color:#FFFFFF;
+	text-align:right;
+	float: right;
+}
+.tab_area {
+	position:absolute;
+	top: 50px;
+	left: 50px;
+	width:500px;
+    height: auto;
+  
+}
+
+.tab {
+    list-style:none;
+    overflow:hidden;
+   
+}
+
+.tab li {
+    background:#ccc;
+    padding:10px 30px;
+    float:left;
+    margin-right:5px;
+   
+}
+
+.tab_content {
+    list-style:none;
+    margin: 0;
+}
+.tab_content li{
+    background:#eee;
+    padding:20px;
+    
+}
+
+.tab_content img {
+  position:relative;
+}
+  
+.tab_content span{
+    position: absolute;
+    top:50px;
+    left:200px;
+}
+.hide {
+    display:none;
+}
+
+.main ul {
+	margin-top: 5px;
+}
+.main {
+	position:relative;
+	top:-10px;
+	width:840px;
+	height:360px;
+	margin:10px auto 30px auto;
+	list-style-type:none;
+}
+
+.main_01 {
+	width:840px;
+	height:500px;
+	margin:20px auto;
+	
+}
+ 
+
+
+.article{
+    position:relative;
+	top:-20px;
+	left:10px;
+	width:480px;
+	height:250px;
+	margin:10px auto 30px auto;
+	list-style-type:none;
+    text-align:center;
+	
+}
+
+.article dl {
+	position:relative;
+	left: 50px;
+    line-height: 2;
+
+}
+.article dt {
+	position:absolute;
+    left:10px;
+	width:55px;
+	padding:18px 20px 0 5px;
+	font-size:10px;
+	font-weight:bold;
+	color:#52483B;
+
+}
+
+.article h2 {
+	height:30px;
+	margin-bottom:15px;
+	margin-left: 20px;
+	padding-left:30px;
+	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.footer {
+	width: 930px;
+	height:80px;
+	margin-top:24px;
+	padding-top:20px;
+	background: image-url('bg_footer.png')repeat-x;
+	position: absolute;
+	top: 900px;
+	left:50px;
+	
+}
+
+
+.footer p {
+	font-size:10px;
+	font-style:normal;
+	color:#FFFFFF;
+	text-align:center;
+}
+
+
+/* クリアフィックス */
+.clearfix:after { 
+	content:"";
+    display:block;
+    clear:both;
+} 
+
+
+input[type="text"],textarea{
+	box-sizing: border-box;
+	width:480px;
+	height:100px;
+	padding:5px;
+	margin-top:100px;
+	text-align:left;
+}
+
+#error_explanation{
+	margin-top:30px;
+}
+
+
+
+.letter_content  {
+	position:absolute;
+	top:150px;
+    left:200px;
+}
+
+
+.letter_content p{
+	margin:10px;
+	
+}
+
+.letter_content2  {
+	position:absolute;
+	top:150px;
+    left:100px;
+}
+
+.letter_content2 td{
+	margin:10px;
+	padding:10px;
+	
+}
+
+
+
+
+
