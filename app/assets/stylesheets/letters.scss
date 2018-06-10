@@ -222,8 +222,22 @@ input[type="text"],textarea{
 }
 
 #error_explanation{
-	margin-top:30px;
+	margin-top:30px; 
+	position:relative;
 }
+#error_explanation ul{
+	position:absolute;
+	top:70px;
+    left:200px;
+
+}
+
+#error_explanation h3{
+	position:absolute;
+	top:50px;
+    left:200px;
+}
+
 
 
 
@@ -251,7 +265,4 @@ input[type="text"],textarea{
 	
 }
 
-
-
-
-
+	

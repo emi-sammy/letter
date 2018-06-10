@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-
-  resources :letters
-  
-  root'letters#top'
-
+  resources :letters do
+    collection do
+    post :confirm
+    end
+  end
+   root'letters#top'
 end
+

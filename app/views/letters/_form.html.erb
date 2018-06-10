@@ -1,7 +1,7 @@
-　<%= form_with(model: @letter, local: true) do |form| %>
+<%= form_with(model: @letter, local: true ,url: choose_new_or_edit ) do |form| %>
   <% if @letter.errors.any? %>
     <div id="error_explanation">
-    <h2><%= @letter.errors.count %>件のエラーがあります。</h2>
+    <h3><%= @letter.errors.count %>件のエラーがあります。</h3>
      <ul>
       <% @letter.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,10 +10,8 @@
     </div>
 <% end %>
 
-
   <div class="letter_content">
     <tr>
-     <th><%= form.label :content %> </th>
      <td><%= form.text_field :content %> </td>
    </tr> 
   
