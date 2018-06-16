@@ -1,25 +1,7 @@
 <div class="container">
 
-　 <div class="header">
-		<header>
-			<div class ="tab_area clearfix">
-				<ul class="tab clearfix" >
-					<li>
-        <%= link_to root_path do %> Home
-        <% end %>
-         </li>
-			    <li><%= link_to new_letter_path do %>Letter
-			     <% end %></li>
-			    <li><%= link_to letters_path do %>List
-			    <% end %></li>
-			     
-				</ul>
-			</div>
-	</header>
-</div>
 　
  <div class="letter_content2">
-   　
 　<h2>手紙一覧</h2>
 
 　<p><%= notice %></p>
@@ -28,15 +10,16 @@
 
 <table>
 <% @letter.each do |letter| %>
+ <div class="btn-group" role="group" aria-label="...">
   <tr>
-    <td><%= letter.content %></td>
-    <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
-    <td><%= link_to "編集する", edit_letter_path(letter.id), data: { confirm: '編集しますか？' } %></td>
-    <td><%= link_to '削除する', letter_path(letter.id), method: :delete ,data: { confirm: '削除しますか？' } %></td>
-  </tr>
-  
+  <th><%= letter.content %></th>
+  <th>
+    <td> <button type="button" class="btn btn-Default"><%= link_to '詳細確認', letter_path(letter.id) %></button></td>
+    <td> <button type="button" class="btn btn-Default"><%= link_to "編集する", edit_letter_path(letter.id), data: { confirm: '編集しますか？' } %></button></td>
+    <td> <button type="button" class="btn btn-Default"><%= link_to '削除する', letter_path(letter.id), method: :delete ,data: { confirm: '削除しますか？' } %></button></td>
+  </th>
+
 <% end %>
+</tr>
 </table>
 </div>
-
-

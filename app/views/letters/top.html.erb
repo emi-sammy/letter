@@ -1,62 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-       <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
-        <link rel="stylesheet" href="./css/letters.css">
-        <link rel="stylesheet" href="./css/normalize.css">
-        <!-- ▼ページタイトル -->
-        <title>letters</title>
-</head>
 
-<body>
-	
-  <div class="container">
+ <article>
+    <div class="contents">
 
-　 <div class="header">
-		<header>
-			<div class ="tab_area clearfix">
-				<ul class="tab clearfix" >
-					<li>
-        <%= link_to root_path do %> Home
-        <% end %>
-         </li>
-			    <li><%= link_to new_letter_path do %>Letter
-			     <% end %></li>
-			    <li><%= link_to letters_path do %>List
-			    <% end %></li>
-			     
-				</ul>
-			</div>
-	</header>
-　</div>
-	
-  <div class="contents">
-  　 	
- 	  <h1>自分へ手紙を書こう！</h1>
-    
-  	<div class="main_photo">	
-	　	<ul class="main">
-			<li class="main_01"><%= image_tag 'main_01.jpg'%></li>
-			</ul>
-	</div>
-			
-  	<div class="article">
-  	<article>
-		<h2>Happyな日も、</h2>
-		<h2>泣きたい夜も、</h2>
-		<h2>気持ちを綴れば、明日はいい日</h2>
-	  </article>	
-	</div>
-	</div>
+      <h1>自分へ手紙を書こう！</h1>
 
-    <div class="footer">
-     <footer>
-	 	 <p>&copy; 2018 NTT COMCHEO 2018.01. All rights reserved.</p>
-　　 </footer>
-   </div>
-   
- </div>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="row_A">
+            <li class="col-sm-6 col-md-3"><%= image_tag 'main_01.jpg'%></li>
+          </ul>
+        </div>
 
-</body>
-</html>
+        <div class="col-md-6">
+            <ul class="row_B">
+              <li class="col-md-12">Happyな日も、</li>
+              <li class="col-md-12">泣きたい夜も、</li>
+              <li class="col-md-12">気持ちを綴れば、明日はいい日</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </article>

@@ -1,7 +1,6 @@
 li{
     list-style:none;
 }
-
 ul{
     padding:0;
 }
@@ -21,8 +20,8 @@ ul{
     text-align:center;
 }
 .contents li{
-    background-color:#fff;
-    color:#000000;
+    background-color:#F3A7AB;
+    color:#fff;
     padding:10% 10%;
     box-sizing: border-box;
     border: solid 1px #fff;
@@ -32,17 +31,6 @@ ul{
     border-bottom: dotted 1px #333333;
 }
 .container{
-   width: auto;
-   margin-top:20px;
-   padding-bottom: 100px;
-  }
-
-  input[type="text"],textarea{
-  	box-sizing: border-box;
-  	width:480px;
-  	height:100px;
-  	padding:5px;
-  	margin-top:10px;
-  	text-align:left;
-
-  }
+    margin-top:20px;
+    padding-bottom: 100px;
+}
