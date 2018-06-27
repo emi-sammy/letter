@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :letters do
+   get 'sessions/new'
+
+    root to:'letters#top'
+   resources:letters do
     collection do
     post :confirm
     end
-  end
-   root'letters#top'
+ end
+   resources:sessions,only:[:new,:create,:destroy]
+   resources:users
 end
-
