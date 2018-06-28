@@ -46,14 +46,16 @@
   <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
 
+
+<div class="container-fluid">
   <% if logged_in? %>
-  <%= link_to "＊　アカウント情報　＊", user_path(current_user.id) %>
-  <%= link_to "　ログアウト　＊", session_path(current_user.id), method: :delete %>
+  <p><%= link_to "＊　アカウント情報　＊", user_path(current_user.id) %><%= link_to "　ログアウト　＊", session_path(current_user.id), method: :delete %></p>
+
 
   <% else %>
-  <%= link_to "＊　新規アカウント登録　＊",new_user_path %>
-  <%= link_to "　ログイン　＊",sessions_new_path %>
+    <p><%= link_to "＊　新規アカウント登録　＊",new_user_path %><%= link_to "　ログイン　＊",sessions_new_path %></p>
   <% end %>
+	</div>
 
    <%= yield %>
 
