@@ -49,13 +49,15 @@
 
 <div class="container-fluid">
   <% if logged_in? %>
-  <p><%= link_to "＊　アカウント情報　＊", user_path(current_user.id) %><%= link_to "　ログアウト　＊", session_path(current_user.id), method: :delete %></p>
-
+  ようこそ　<strong><%= link_to current_user.name, user_path(current_user.id) %></strong>　さん
+   　＊　<%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
 
   <% else %>
-    <p><%= link_to "＊　新規アカウント登録　＊",new_user_path %><%= link_to "　ログイン　＊",sessions_new_path %></p>
+    <p><%= link_to "新規アカウント登録",new_user_path %> 　＊　
+      <%= link_to "ログイン",sessions_new_path %></p>
   <% end %>
 	</div>
+</div>
 
    <%= yield %>
 

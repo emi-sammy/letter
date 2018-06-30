@@ -57,8 +57,10 @@ class LettersController < ApplicationController
   end
 
   def login_check
-  if logged_in?
-  else redirect_to new_session_path
+   if logged_in?
+     
+   else
+     redirect_to new_session_path
   end
 end
 
