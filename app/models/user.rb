@@ -6,4 +6,8 @@ validates:email,presence:true,length:{maximum:255},format:{with:/\A[\w+\-.]+@[a-
 before_validation{email.downcase!}
 has_secure_password
 validates :password,presence:true,length:{minimum:6}
+
+has_many :letters, dependent: :destroy
+has_many :favorites, dependent: :destroy
+has_many :favorite_letters, through: :favorites, source: :letter
 end
