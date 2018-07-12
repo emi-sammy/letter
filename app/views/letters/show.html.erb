@@ -1,9 +1,7 @@
 <h1>詳細画面</h1>
 
 <p class="panel panel-default content_show">内容: <%= @letter.content %></p>
-
 <br>
-
 <p class="panel panel-default">投稿者: <%= @user.name %></p>
 
 <% unless @letter.user == current_user %>

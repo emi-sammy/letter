@@ -1,35 +1,30 @@
  <div class="letter_content2">
 　<h2>手紙リスト</h2>
-
 　<p><%= notice %></p>
 
-<div class="container">
-    <div class="row">
-<table>
-<% @letter.each do |letter| %>
- <div class="btn-group" role="group" aria-label="...">
-  <tr>
-  <th><%= letter.content %></th>
-  <th>
-    <td> <button type="button" class="btn btn-Default"><%= link_to '詳細確認', letter_path(letter.id) %></button></td>
+　　<div class="container">
+  　　<div class="row">
+　　　<table>
+　　<% @letter.each do |letter| %>
+ 　　　<div class="btn-group" role="group" aria-label="...">
+　　　  <tr>
+  　　　<th><%= letter.content %></th>
+　　　  <th>
+  　　  <td> <button type="button" class="btn btn-Default"><%= link_to '詳細確認', letter_path(letter.id) %></button></td>
 
     <% if logged_in? && current_user.id == letter.user_id %>
-    <td> <button type="button" class="btn btn-Default"><%= link_to "編集する", edit_letter_path(letter.id), data: { confirm: '編集しますか？' } %></button></td>
-    <td> <button type="button" class="btn btn-Default"><%= link_to '削除する', letter_path(letter.id), method: :delete ,data: { confirm: '削除しますか？' } %></button></td>
-  <% end %>
+  　　  <td> <button type="button" class="btn btn-Default"><%= link_to "編集する", edit_letter_path(letter.id), data: { confirm: '編集しますか？' } %></button></td>
+  　　  <td> <button type="button" class="btn btn-Default"><%= link_to '削除する', letter_path(letter.id), method: :delete ,data: { confirm: '削除しますか？' } %></button></td>
+  　<% end %>
 
+  　<% if logged_in? && @my_favorites.find_by(letter_id: letter.id).present? %>
+  　　　<td> <button type="button" class="btn btn-warning"><%= ' お気に入り' %></button></td>
 
-
-  <% if logged_in? && @my_favorites.find_by(letter_id: letter.id).present? %>
-  <td> <button type="button" class="btn btn-warning"><%= ' お気に入り' %></button></td>
-
-<% end %>
-
-  <% end %>
- </tr>
- </table>
- </div>
-</div>
-
-</div>
+　　<% end %>
+　<% end %>
+ 　　　</tr>
+ 　　　</table>
+ 　　　　</div>
+　　　</div>
+　　</div>
 </div>

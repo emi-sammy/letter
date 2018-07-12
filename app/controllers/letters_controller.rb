@@ -21,12 +21,10 @@ class LettersController < ApplicationController
   def create
     @letter = Letter.new(letter_params)
     @letter.user_id = current_user.id
-    #現在ログインしているuserのidをblogのuser_idカラムに挿入する。
     if @letter.save
-    # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
+      LetterMailer.letter_mail(@letter).deliver
       redirect_to letters_path, notice: "作成しました！"
     else
-      # 入力フォームを再描画します。
       render 'new'
     end
   end
