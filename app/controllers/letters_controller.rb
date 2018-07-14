@@ -59,8 +59,6 @@ class LettersController < ApplicationController
   def confirm
     @letter= Letter.new(letter_params)
     @letter.user_id = current_user.id
-    #現在ログインしているuserのidをblogのuser_idカラムに挿入する。
- #省略
     render :new if @letter.invalid?
   end
 
