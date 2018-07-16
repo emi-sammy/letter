@@ -1,7 +1,7 @@
-<h1>詳細画面</h1>
+<h2>詳細画面</h2>
 
 <p class="panel panel-default content_show">内容: <%= @letter.content %></p>
-<br>
+<p>画像：<%= image_tag(@letter.image) %></p>
 <p class="panel panel-default">投稿者: <%= @user.name %></p>
 
 <% unless @letter.user == current_user %>

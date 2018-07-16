@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>letter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
+  <head>
+    <title>letter</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-<body>
-<div class="container">
-   <div class="header">
-    <header>
-      <div class ="tab_area clearfix">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"data-target="#gnavi">
-                <span class="sr-only">LETTERS</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <li class="navbar-brand" ><%= link_to root_path do %> LETTERS
-              <% end %></li>
-            </div>
+  <body>
+    <div class="container">
+      <div class="header">
+        <header>
+          <div class="tab_area clearfix">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+                    <span class="sr-only">LETTERS</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <li class="navbar-brand"><%= link_to root_path do %>
+                    LETTERS
+                  <% end %>
+                </li>
+              </div>
 
-            <div id="gnavi" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li> <%= link_to root_path do %> Home
-                  <% end %></li>
+              <div id="gnavi" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <%= link_to root_path do %>
+                    Home
+                  <% end %>
+                </li>
                 <li><%= link_to new_letter_path do %>Letter
-                  <% end %></li>
-                <li><%= link_to letters_path do %>List
-                  <% end %></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+                <% end %>
+              </li>
+              <li><%= link_to letters_path do %>List
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
   </div>
+</header>
+</div>
 
-  <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
-
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
 
 <div class="container-fluid">
   <% if logged_in? %>
-  ようこそ　<strong><%= link_to current_user.name, user_path(current_user.id) %></strong>　さん
-   　＊　<%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-
+    <p>ようこそ
+      <%= link_to current_user.name, user_path(current_user.id) %>さん ＊
+      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %></p>
   <% else %>
-    <p><%= link_to "新規アカウント登録",new_user_path %> 　＊　
+    <p><%= link_to "新規アカウント登録",new_user_path %>
+      ＊
       <%= link_to "ログイン",sessions_new_path %></p>
   <% end %>
-	</div>
 </div>
 
-   <%= yield %>
+<%= yield %>
 
-  <footer class="text-center">
-    <p>&copy; 2018 NTT COMCHEO 2018.01. All rights reserved.</p>
-  </footer>
- </body>
+<footer class="text-center">
+<p>&copy; 2018 NTT COMCHEO 2018.01. All rights reserved.</p>
+</footer>
+</body>
 </div>
 </html>

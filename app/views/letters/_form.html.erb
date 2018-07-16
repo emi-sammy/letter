@@ -1,20 +1,23 @@
-
-
 <%= form_with(model: @letter, local: true ,url: choose_new_or_edit ) do |form| %>
-  <% if @letter.errors.any? %>
-    <div id="error_explanation">
-    <h3><%= @letter.errors.count %>件のエラーがあります。</h3>
-     <ul>
+<% if @letter.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= @letter.errors.count %>件のエラーがあります。</h4>
+    <ul>
       <% @letter.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-     </ul>
-    </div>
-　<% end %>
+    </ul>
+  </div>
+<% end %>
 
-
-　<div class="container-fluid">
-     <p><%= form.text_field :content %></p>
-     <p class="btn btn-Default btn-lg" role="button"><%= form.submit "作成 "%></p>
- </div>
+<div class="container-fluid">
+  <p><%= form.text_field :content , :size=>"40" %></p>
+</div>
+<div class="container-fluid">
+  <p><%= form.label  "画像" %></p>
+  <%= image_tag(@letter.image) if @letter.image %>
+  <p><%= form.file_field :image, id: :letter_image %></p>
+</div>
+<p><%= form.submit "作成",class: "btn btn-primary btn-normal"%></p>
+</div>
 <% end %>

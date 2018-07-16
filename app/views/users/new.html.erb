@@ -33,6 +33,12 @@
   <%= f.password_field :password_confirmation %>
   </div>
 
+  <div class="col-md-3">
+  <%= f.label "ユーザアイコン" %>
+  <%= f.file_field :image, id: :user_image %>
+  </div>
+
+
   <%= f.submit "登録する", class: "btn btn-primary btn-normal" %>
 </div>
 <% end %>

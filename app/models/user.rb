@@ -10,4 +10,6 @@ validates :password,presence:true,length:{minimum:6}
 has_many :letters, dependent: :destroy
 has_many :favorites, dependent: :destroy
 has_many :favorite_letters, through: :favorites, source: :letter
+
+ mount_uploader :image, ImageUploader
 end

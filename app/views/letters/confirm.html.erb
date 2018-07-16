@@ -3,12 +3,14 @@
 <%= form_with(model: @letter, url: letters_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
 <br>
-  <p><%= @letter.content %></p>
-<br>  
-  <p><%= form.submit  "手紙を書く" %> </p>
+  <p>本文：<%= @letter.content %></p>
+  <p>画像：<%= image_tag(@letter.image) %></p>
+<br>
+  <p><%= form.submit  "手紙を書く",class: "btn btn-primary btn-normal"%></p>
 <% end %>
 <br>
 <%= form_with(model: @letter, url: new_letter_path, local: true, method: 'get') do |form| %>
   <p><%= form.hidden_field :content %></p>
-　<p><%= form.submit "もどる", name: 'back' %></p>
+  <p><%= form.hidden_field :image_cache %></p>
+  <p><%= form.submit "もどる", name: 'back',class: "btn btn-primary btn-normal"%></p>
 <% end %>
