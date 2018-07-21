@@ -1,17 +1,16 @@
 <h1>以下の内容で投稿する</h1>
-<br>
+
 <%= form_with(model: @letter, url: letters_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-<br>
-  <p>本文：<%= @letter.content %></p>
-  <p>画像：<%= image_tag(@letter.image) %></p>
-  <p><%= form.hidden_field :image_cache %></p>
-<br>
-  <p><%= form.submit  "手紙を書く",class: "btn btn-primary btn-normal"%></p>
+  <%= form.hidden_field :image_cache %>
+<p>本文：<%= @letter.content %></p>
+<p>画像：<%= image_tag(@letter.image) %></p>
+<p><%= form.submit "手紙を書く",class: "btn btn-primary btn-normal"%></p>
 <% end %>
-<br>
+
 <%= form_with(model: @letter, url: new_letter_path, local: true, method: 'get') do |form| %>
-  <p><%= form.hidden_field :content %></p>
-  <p><%= form.hidden_field :image_cache %></p>
-  <p><%= form.submit "もどる", name: 'back',class: "btn btn-primary btn-normal"%></p>
+<p><%= form.hidden_field :content %></p>
+<p><%= form.hidden_field :image_cache %></p>
+<p><%= form.submit "もどる", name: 'back',class: "btn btn-primary btn-normal"%></p>
 <% end %>
