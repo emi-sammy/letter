@@ -5,6 +5,7 @@
 <br>
   <p>本文：<%= @letter.content %></p>
   <p>画像：<%= image_tag(@letter.image) %></p>
+  <p><%= form.hidden_field :image_cache %></p>
 <br>
   <p><%= form.submit  "手紙を書く",class: "btn btn-primary btn-normal"%></p>
 <% end %>
