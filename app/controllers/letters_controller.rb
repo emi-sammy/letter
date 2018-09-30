@@ -55,8 +55,6 @@ class LettersController < ApplicationController
 
   def confirm
     @letter = Letter.new(letter_params)
-    @letter.user_id = current_user.id
-    render :new if @letter.invalid?
   end
 
   def login_check
